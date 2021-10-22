@@ -27,7 +27,13 @@
 				</v-card-text>
 				<v-card-actions>
 					<v-spacer></v-spacer>
-					<v-btn color="primary">Login</v-btn>
+					<v-btn 
+					color="primary"
+					@ckick="OnSubmit"
+					:disabled="!valid"
+					>
+						Login
+					</v-btn>
 				</v-card-actions>	
 			</v-card>
 			</v-flex>
@@ -49,6 +55,17 @@ export default{
 				v => !!v || 'Name is required',
 				v => (v && v.length >= 6) || 'Password must be more or equel than 6 characters',
 			]
+		}
+	},
+	methods: {
+		OnSubmit(){
+			if (this.$refs.form.validate()){
+				const user = {
+					email: this.email,
+					password: this.password
+				}
+				console.log(user)
+			}
 		}
 	}
 }
