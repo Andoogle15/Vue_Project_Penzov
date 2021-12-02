@@ -32,22 +32,30 @@
     </v-list-item-group>
   </v-list>
 
-  </v-navigation-drawer> 
+  </v-navigation-drawer>
   <v-app-bar app dark color="primary">
-    <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
+<v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+    <v-toolbar-title>
+      <router-link
+      to="/"
+      tag="span"
+      class="pointer">
+      Home
+      </router-link>
+    </v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
        <v-btn 
-       v-for="link in links" 
-       :key="link.title"
-       :to="link.url" 
-       text><v-icon left>{{ link.icon }}</v-icon>{{ link.title }}</v-btn> 
+ v-for="link in links"
+ :key="link.title"
+ :to="link.url"   
+ text><v-icon left>{{ link.icon }}</v-icon>{{ link.title }}</v-btn>
     </v-toolbar-items>
   </v-app-bar>
-  <v-content>
+  <v-main>
     <router-view></router-view> 
-  </v-content>
-  </v-app>
+  </v-main>
+  </v-app>  
 </template>
 
 <script>
