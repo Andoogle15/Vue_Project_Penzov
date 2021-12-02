@@ -13,7 +13,8 @@
 					<v-list-item-action>
 						<v-checkbox
 						:input-value="order.done"
-						color="primary"></v-checkbox>
+						color="primary"
+						@click="markDone(order)"></v-checkbox>
 					</v-list-item-action>
 				<v-list-item-content>
 					<v-list-item-title>{{order.name}}</v-list-item-title>
@@ -28,7 +29,7 @@
 			</v-flex>
 		</v-layout> 
 	</v-container>
-</template>
+</template>	
 <script>
 export default{
 	data(){ 
@@ -43,6 +44,12 @@ export default{
 				}
 			]
 		}	
+	},
+	methods: {
+		markDone(order) {
+			order.done=!order.done
+			console.log(order.done)
+		}
 	}
 }
 </script>
