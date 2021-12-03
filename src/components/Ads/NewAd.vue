@@ -20,9 +20,7 @@
 					class="mb-3">
 					</v-textarea>
 				</v-form>
-			</v-flex>
-		</v-layout> 
-		<v-layout  row> 
+				<v-layout  row> 
          <v-flex xs12>
 			<v-btn
 			class="mt-3"
@@ -54,14 +52,31 @@
 				</v-btn>
 			</v-flex>
 		</v-layout>
-
+			</v-flex>
+		</v-layout> 
 	</v-container>
 </template>
 <script>
 export default{
 	data(){ 
 		return{
+			valid: false,
+			title: "",
+			description: "",
+			promo: true
 		}	
+	},
+	methods: {
+		createAd(){
+			if (this.$$refs.form.validate()){
+				const ad = {
+					title: this.title,
+					desc: this.description,
+					promo: this.promo
+				}
+				console.log(ad)
+			}	
+		}
 	}
 }
 </script>
