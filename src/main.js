@@ -3,11 +3,13 @@ import Router from 'vue-router'
 import App from './App.vue'
 import vuetify from './plugins/vuetify'
 import router from './router/index.js'
+
+
 Vue.use(Router)
 Vue.config.productionTip = false
 
 new Vue({
   vuetify,
   render: h => h(App),
-  router:router
+  router:router,
 }).$mount('#app')
