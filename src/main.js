@@ -16,15 +16,15 @@ new Vue({
   router:router,
   store,
   created(){
-    var firebaseConfig = {
-    apiKey: "AIzaSyCP3B9ISQ9Q0I-rVMCNKCe3FuL6ldkE4rE",
-    authDomain: "vue-ads-2021.firebaseapp.com",
-    projectId: "vue-ads-2021",
-    storageBucket: "vue-ads-2021.appspot.com",
-    messagingSenderId: "197397540349",
-    appId: "1:197397540349:web:e642a60bfbde2d5baffd94",
-    measurementId: "G-GW0BDMX9PS"
-  };
+    const firebaseConfig = {
+      apiKey: "AIzaSyConprsirqVkWHAWOICO6qO-Ybe_gkP7i0",
+      authDomain: "vue-project-2e38c.firebaseapp.com",
+      projectId: "vue-project-2e38c",
+      storageBucket: "vue-project-2e38c.appspot.com",
+      messagingSenderId: "99971442262",
+      appId: "1:99971442262:web:0182d148ea55ec8ca27df7",
+      measurementId: "G-TW6WWHZ3DT"
+    };
   // Initialize Firebase
     fb.initializeApp(firebaseConfig);
     fb.analytics();
