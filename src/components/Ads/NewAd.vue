@@ -76,9 +76,8 @@ export default{
         src: "https://cdn.vuetifyjs.com/images/cards/cooking.png"
         }
         console.log(ad)
+        }   
     }
-}
-
     }
 }
 </script>
