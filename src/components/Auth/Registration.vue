@@ -3,13 +3,13 @@
         <v-layout align-center justify-center> 
             <v-flex xs12 sm8 md4>
             <v-card class="elevetion-12">
-                <v-toolbar dark color="#800080">
+                <v-toolbar dark color="primary">
 <v-toolbar-title>Registration</v-toolbar-title>
 </v-toolbar>
                 <v-card-text>
                     <v-form v-model="valid" ref="form" lazy-validation>
                         <v-text-field
-                         prepend-icon="mdi-account" color="#800080" 							
+                         prepend-icon="mdi-account"							
                          name="email" 
                            label="Email" 
                          type="email"
@@ -17,7 +17,7 @@
                          :rules="emailRules">
                         </v-text-field>
                         <v-text-field  
-                         prepend-icon="mdi-lock" color="#800080" 
+                         prepend-icon="mdi-lock"
                          name="password" 
                          label="Password" 
                          type="password" 
@@ -25,7 +25,7 @@
                          :rules="passwordRules">
                         </v-text-field>
                         <v-text-field
-                         prepend-icon="mdi-lock" color="#800080"
+                         prepend-icon="mdi-lock"
                          name="confirm-password" 
                          label="Confirm Password" 
                          type="password"
@@ -36,7 +36,7 @@
                 </v-card-text>
                 <v-card-actions>
                     <v-spacer></v-spacer>
-                    <v-btn dark color="purple" @click="onSubmit" :disabled="!valid">Create Account</v-btn>
+                    <v-btn dark color="primary" @click="onSubmit" :disabled="!valid">Create Account</v-btn>
                 </v-card-actions>	
             </v-card>
             </v-flex>
