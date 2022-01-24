@@ -55,6 +55,17 @@
   <v-main>
     <router-view></router-view> 
   </v-main>
+  <v-snackbar
+  :timeout="5000"
+  :multi-line="true"
+  color="error"
+  @input="closeError"
+  :value="true"
+  >
+    Error
+    <v-btn text dark @click.native="closeError">Close</v-btn>
+  </v-snackbar>
+
   </v-app>  
 </template>
 
@@ -63,9 +74,19 @@ export default {
   data() {
     return {
       drawer: false,
-      links: [{title:"Login", icon:"mdi-lock", url:"/login"}, {title:"Registration", icon:"mdi-face", url:"/registration"},
-      {title:"Orders", icon:"mdi-bookmark-miltiple-outline", url:"/orders"}, {title:"New ad", icon:"mdi-note-plus-outline", url:"/new"}, {title:"My ads", icon:"mdi-view-list-outline", url:"/list"}]
+      links: [
+      {title:"Login", icon:"mdi-lock", url:"/login"},
+      {title:"Sign up", icon:"mdi-account-arrow-right-outline", url:"/registration"},
+      {title:"Orders", icon:"mdi-bookmark-multiple-outline", url:"/orders"},
+      {title:"New ad", icon:"mdi-note-plus-outline", url:"/new"},
+      {title:"My ads", icon:"mdi-view-list-outline", url:"/list"}
+      ]
     }
-  }
+  },
+  methods: {
+    closeError () {
+      this.$store.dispatch('clearError')
+    }
+ }
 }
 </script>
